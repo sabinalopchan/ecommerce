@@ -2,6 +2,7 @@ import 'package:ecommerce/viewmodels/auth_viewmodel.dart';
 import 'package:ecommerce/viewmodels/global_ui_viewmodel.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:provider/provider.dart';
 
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
               title: 'Ecommerce',
               theme: ThemeData(
                 primarySwatch: Colors.blue,
+                textTheme: GoogleFonts.latoTextTheme(),
               ),
               home: LoginScreen(),
             );

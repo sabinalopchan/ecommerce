@@ -1,10 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:pin_code_text_field/pin_code_text_field.dart';
 import '../../../common/app/theme.dart';
-import '../../../../common/button/custom_button.dart';
 import '../../../../common/icon/custom_icon.dart';
-import '../screens/confirm_password_screen.dart';
 
 class OtpVerificationWidget extends StatefulWidget {
   const OtpVerificationWidget({super.key});

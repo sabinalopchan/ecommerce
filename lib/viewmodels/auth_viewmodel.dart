@@ -8,9 +8,7 @@ import '../services/firebase_service.dart';
 class AuthViewModel with ChangeNotifier {
   User? _user = FirebaseService.firebaseAuth.currentUser;
 
-
   User? get user => _user;
-
 
   Future<void> register(UserModel user) async {
     try {
@@ -22,12 +20,12 @@ class AuthViewModel with ChangeNotifier {
     }
   }
 
-  Future<void> login(String email, String password)async{
+  Future<void> login(String email, String password) async {
     try {
       var response = await AuthRepository().login(email, password);
       _user = response!.user;
       notifyListeners();
-    }catch (err) {
+    } catch (err) {
       rethrow;
     }
   }

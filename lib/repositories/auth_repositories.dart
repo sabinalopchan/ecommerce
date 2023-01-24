@@ -3,9 +3,7 @@ import 'package:ecommerce/services/firebase_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepository {
-
-  Future<UserCredential> register(
-      UserModel user) async {
+  Future<UserCredential> register(UserModel user) async {
     try {
       final response = await FirebaseService.db
           .collection("users")
@@ -28,12 +26,12 @@ class AuthRepository {
     }
   }
 
-  Future<UserCredential>login(String email, String password)async{
-    try{
-      UserCredential _uc=await FirebaseService.firebaseAuth.
-      signInWithEmailAndPassword(email: email, password: password);
+  Future<UserCredential> login(String email, String password) async {
+    try {
+      UserCredential _uc = await FirebaseService.firebaseAuth
+          .signInWithEmailAndPassword(email: email, password: password);
       return _uc;
-    }catch(err){
+    } catch (err) {
       rethrow;
     }
   }
