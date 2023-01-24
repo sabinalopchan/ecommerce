@@ -71,12 +71,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                       SizedBox(
                         height: MediaQuery.of(context).viewPadding.top + 40,
                       ),
-                      // Text("Logo",
-                      //     style: TextStyle(
-                      //       color: CustomTheme.darkGray,
-                      //       fontSize: 28,
-                      //       fontWeight: FontWeight.bold,
-                      //     )),
                       SizedBox(
                         height: 30,
                       ),
@@ -214,11 +208,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             ),
                                             recognizer: TapGestureRecognizer()
                                               ..onTap = () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            RegisterScreen()));
+                                                Navigator.of(context).pushNamed('/register');
+                                                // Navigator.push(
+                                                //     context,
+                                                //     MaterialPageRoute(
+                                                //         builder: (context) =>
+                                                //             RegisterScreen()));
                                               }),
                                       ])),
                                 ),

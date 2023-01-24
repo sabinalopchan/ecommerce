@@ -269,11 +269,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           ),
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          LoginScreen()));
+                                              Navigator.of(context)
+                                                  .pushNamed('/login');
                                             },
                                         ),
                                       ])),
