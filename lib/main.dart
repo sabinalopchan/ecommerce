@@ -1,3 +1,4 @@
+import 'package:ecommerce/feature/customer/screens/register_screen.dart';
 import 'package:ecommerce/viewmodels/auth_viewmodel.dart';
 import 'package:ecommerce/viewmodels/global_ui_viewmodel.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -39,12 +40,17 @@ class MyApp extends StatelessWidget {
               context.loaderOverlay.hide();
             }
             return MaterialApp(
+              debugShowCheckedModeBanner: false,
               title: 'Ecommerce',
               theme: ThemeData(
                 primarySwatch: Colors.blue,
                 textTheme: GoogleFonts.latoTextTheme(),
               ),
-              home: LoginScreen(),
+              initialRoute: "/login",
+              routes: {
+                "/login": (BuildContext context) => LoginScreen(),
+                "/register": (BuildContext context) => RegisterScreen(),
+              },
             );
           },
         ),

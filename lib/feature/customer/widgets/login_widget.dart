@@ -41,8 +41,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           .then((value) {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text("Login success")));
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => RegisterScreen()));
+        Navigator.of(context).pushNamed('/register');
       }).catchError((e) {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text(e.message.toString())));
@@ -57,16 +56,12 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   Widget build(BuildContext context) {
     final _height = MediaQuery.of(context).size.height;
-    // final _theme = Theme.of(context);
     return Scaffold(
         backgroundColor: CustomTheme.backgroudColor,
-        // appBar: AppBar(
-        // ),
         body: SingleChildScrollView(
           child: Container(
             height: _height,
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(

@@ -29,15 +29,15 @@ class UserModel {
         email: json["email"],
         password: json["password"],
       );
-  factory UserModel.fromFirebaseSnapshot(
-          DocumentSnapshot<Map<String, dynamic>> json) =>
-      UserModel(
-        userId: json["user_id"],
-        fcmToken: json["fcm_token"],
-        username: json["username"],
-        email: json["email"],
-        password: json["password"],
-      );
+  // factory UserModel.fromFirebaseSnapshot(
+  //         DocumentSnapshot<Map<String, dynamic>> json) =>
+  //     UserModel(
+  //       userId: json["user_id"],
+  //       fcmToken: json["fcm_token"],
+  //       username: json["username"],
+  //       email: json["email"],
+  //       password: json["password"],
+  //     );
 
   Map<String, dynamic> toJson() => {
         "user_id": userId,

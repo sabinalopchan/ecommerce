@@ -52,8 +52,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
       });
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text("Registered Successfully")));
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => LoginScreen()));
+      Navigator.of(context).pushNamed('/login');
     } catch (err) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(err.toString())));
@@ -66,8 +65,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
     final _height = MediaQuery.of(context).size.height;
     return Scaffold(
         backgroundColor: Color(0xFFAE1DFFD),
-        // appBar: AppBar(
-        // ),
         body: SingleChildScrollView(
           child: Container(
               height: _height,
@@ -77,31 +74,41 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   SizedBox(
                     height: MediaQuery.of(context).viewPadding.top + 40,
                   ),
-                  Text("Logo",
-                      style: TextStyle(
-                        color: CustomTheme.darkGray,
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                      )),
                   Container(
-                    padding: EdgeInsets.only(top: 50, bottom: 20),
-                    child: Text("Welcome ",
-                        style: TextStyle(
-                          color: CustomTheme.darkGray,
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                        )),
-                  ),
-                  Text(
-                    "Create your account",
-                    style: TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 15,
-                      letterSpacing: 0.3,
-                      color: CustomTheme.darkGray,
+                    padding: EdgeInsets.symmetric(horizontal: 24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Logo",
+                            style: TextStyle(
+                              color: CustomTheme.darkGray,
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text("Welcome ",
+                            style: TextStyle(
+                              color: CustomTheme.darkGray,
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Create your account",
+                          style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            fontSize: 15,
+                            letterSpacing: 0.3,
+                            color: CustomTheme.darkGray,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  // SizedBox(height: 15),
                   Spacer(),
                   Stack(
                     children: [
