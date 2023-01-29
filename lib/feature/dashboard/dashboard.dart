@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../common/app/theme.dart';
+import '../homePage/home_header.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -26,7 +27,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             });
           },
           children: [
-            // HomePageScreen(),
+            HomePageHeader(),
             // ProductCartScreen(),
             // OrderListScreen(),
           ],
