@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
           .then((value) {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text("Login success")));
-        Navigator.of(context).pushNamed('/register');
+        Navigator.of(context).pushNamed('/dashboard');
       }).catchError((e) {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text(e.message.toString())));

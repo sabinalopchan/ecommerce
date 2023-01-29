@@ -1,14 +1,14 @@
-import 'package:ecommerce/feature/customer/screens/forgot_password_screen.dart';
-import 'package:ecommerce/feature/customer/screens/register_screen.dart';
 import 'package:ecommerce/viewmodels/auth_viewmodel.dart';
 import 'package:ecommerce/viewmodels/global_ui_viewmodel.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:provider/provider.dart';
 
-import 'feature/customer/screens/login_screen.dart';
+import 'feature/customer/forgot_password_screen.dart';
+import 'feature/customer/login_screen.dart';
+import 'feature/customer/register_screen.dart';
+import 'feature/dashboard/dashboard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,6 +52,7 @@ class MyApp extends StatelessWidget {
                 "/login": (BuildContext context) => LoginScreen(),
                 "/register": (BuildContext context) => RegisterScreen(),
                 "/forgot_password": (BuildContext context) =>ForgotPasswordSreen(),
+                "/dashboard":(BuildContext context) => DashboardScreen(),
               },
             );
           },
