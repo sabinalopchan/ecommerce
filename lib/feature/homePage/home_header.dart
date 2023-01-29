@@ -95,8 +95,7 @@ class _HomePageHeaderState extends State<HomePageHeader> {
                 leading: Icon(Icons.home),
                 trailing: Icon(Icons.arrow_forward_ios_rounded),
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                  Navigator.of(context).pushNamed('/dashboard');
                 },
               ),
               ListTile(

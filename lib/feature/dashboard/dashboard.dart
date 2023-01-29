@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../common/app/theme.dart';
+import '../favorite/favorite_screen.dart';
 import '../homePage/home_header.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -28,7 +29,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           },
           children: [
             HomePageHeader(),
-            // ProductCartScreen(),
+            FavoriteScreen(),
             // OrderListScreen(),
           ],
         ),
