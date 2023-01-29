@@ -29,4 +29,13 @@ class AuthViewModel with ChangeNotifier {
       rethrow;
     }
   }
+
+  Future<void> resetPassword(String email)async{
+    try{
+      await AuthRepository().resetPassword(email);
+      notifyListeners();
+    }catch (err) {
+      rethrow;
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:ecommerce/feature/customer/screens/forgot_password_screen.dart';
 import 'package:ecommerce/feature/customer/screens/register_screen.dart';
 import 'package:ecommerce/viewmodels/auth_viewmodel.dart';
 import 'package:ecommerce/viewmodels/global_ui_viewmodel.dart';
@@ -44,12 +45,13 @@ class MyApp extends StatelessWidget {
               title: 'Ecommerce',
               theme: ThemeData(
                 primarySwatch: Colors.blue,
-                textTheme: GoogleFonts.latoTextTheme(),
+                // textTheme: GoogleFonts.openSansTextTheme(),
               ),
               initialRoute: "/login",
               routes: {
                 "/login": (BuildContext context) => LoginScreen(),
                 "/register": (BuildContext context) => RegisterScreen(),
+                "/forgot_password": (BuildContext context) =>ForgotPasswordSreen(),
               },
             );
           },
