@@ -9,6 +9,7 @@ String userModelToJson(UserModel? data) => json.encode(data!.toJson());
 
 class UserModel {
   UserModel({
+    this.id,
     this.userId,
     this.fcmToken,
     this.username,
@@ -16,6 +17,7 @@ class UserModel {
     this.password,
   });
 
+  String? id;
   String? userId;
   String? fcmToken;
   String? username;
@@ -23,13 +25,17 @@ class UserModel {
   String? password;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
+        id: json["id"],
         userId: json["user_id"],
         fcmToken: json["fcm_token"],
         username: json["username"],
         email: json["email"],
         password: json["password"],
       );
-  factory UserModel.fromFirebaseSnapshot(DocumentSnapshot<Map<String, dynamic>> json) =>UserModel(
+  factory UserModel.fromFirebaseSnapshot(
+          DocumentSnapshot<Map<String, dynamic>> json) =>
+      UserModel(
+        id: json.id,
         userId: json["user_id"],
         fcmToken: json["fcm_token"],
         username: json["username"],
@@ -38,6 +44,7 @@ class UserModel {
       );
 
   Map<String, dynamic> toJson() => {
+        "id": id,
         "user_id": userId,
         "fcm_token": fcmToken,
         "username": username,

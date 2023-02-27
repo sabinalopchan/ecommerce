@@ -91,11 +91,11 @@ class _HomePageHeaderState extends State<HomePageHeader> {
                     )
                   ])),
               ListTile(
-                title: Text("Home"),
-                leading: Icon(Icons.home),
+                title: Text("My products"),
+                leading: Icon(Icons.production_quantity_limits),
                 trailing: Icon(Icons.arrow_forward_ios_rounded),
                 onTap: () {
-                  Navigator.of(context).pushNamed('/dashboard');
+                  Navigator.of(context).pushNamed('/product_screen');
                 },
               ),
               ListTile(
