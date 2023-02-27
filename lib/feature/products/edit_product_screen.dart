@@ -40,7 +40,7 @@ class _EditProductBodyState extends State<EditProductBody> {
   late GlobalUIViewModel _ui;
   late AuthViewModel _authViewModel;
   late CategoryViewModel _categoryViewModel;
-  late SingleProductViewModel _singleProductViewModel;
+  late SingleProductViewModel _singleProductViewModel=SingleProductViewModel();
   String? productId;
 
   @override
@@ -48,11 +48,9 @@ class _EditProductBodyState extends State<EditProductBody> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _ui = Provider.of<GlobalUIViewModel>(context, listen: false);
       _authViewModel = Provider.of<AuthViewModel>(context, listen: false);
-      _categoryViewModel =
-          Provider.of<CategoryViewModel>(context, listen: false);
-      _singleProductViewModel =
-          Provider.of<SingleProductViewModel>(context, listen: false);
-      final args = ModalRoute.of(context)!.settings.arguments.toString();
+      _categoryViewModel = Provider.of<CategoryViewModel>(context, listen: false);
+      _singleProductViewModel=Provider.of<SingleProductViewModel>(context, listen: false);
+       final args = ModalRoute.of(context)!.settings.arguments.toString();
       setState(() {
         productId = args;
       });
@@ -61,7 +59,6 @@ class _EditProductBodyState extends State<EditProductBody> {
     });
     super.initState();
   }
-
   void editProduct() async {
     _ui.loadState(true);
     try {
@@ -76,7 +73,7 @@ class _EditProductBodyState extends State<EditProductBody> {
       );
       await _authViewModel.editMyProduct(data, productId!);
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text("Success")));
+          .showSnackBar(SnackBar(content: Text("Product updated succesfully")));
       Navigator.of(context).pop();
     } catch (e) {
       ScaffoldMessenger.of(context)
@@ -163,7 +160,8 @@ class _EditProductBodyState extends State<EditProductBody> {
   Widget build(BuildContext context) {
     return Consumer<SingleProductViewModel>(
         builder: (context, singleProductVM, child) {
-      if (_singleProductViewModel.product == null) return Text("Error");
+      if (_singleProductViewModel.product == null) 
+          return Text("Error");
       return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black54,
