@@ -52,4 +52,25 @@ class AuthRepository {
       rethrow;
     }
   }
+
+    Future<UserModel> getUserDetail(String id) async {
+    try {
+      final response = await userRef.where("user_id", isEqualTo: id).get();
+
+      var user = response.docs.single.data();
+      user.fcmToken = "";
+      await userRef.doc(user.id).set(user);
+      return user;
+    } catch (err) {
+      rethrow;
+    }
+  }
+
+  Future<void> logout() async {
+    try {
+      await FirebaseService.firebaseAuth.signOut();
+    } catch (err) {
+      rethrow;
+    }
+  }
 }
