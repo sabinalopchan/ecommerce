@@ -5,6 +5,7 @@ import '../../common/app/theme.dart';
 import '../../common/textfield/custom_textfield.dart';
 import '../../models/category_model.dart';
 import '../../models/product_model.dart';
+import '../../services/firebase_service.dart';
 import '../../viewmodels/auth_viewmodel.dart';
 import '../../viewmodels/category_viewmodel.dart';
 import '../../viewmodels/product_viewmodel.dart';
@@ -17,6 +18,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController _searchController=new TextEditingController();
+  
   late AuthViewModel _authViewModel = AuthViewModel();
   late CategoryViewModel _categoryViewModel = CategoryViewModel();
   late ProductViewModel _productViewModel = ProductViewModel();
@@ -49,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
   //         .then((value) {
   //       setState(() {
   //         products = value.docs.map((doc) => doc.data()).toList();
-  //         productName = _authViewModel.currentProduct!.email.toString();
+  //         productName = _authViewModel.myProduct!.productName.toString();
   //       });
   //     });
   //   } catch (e) {

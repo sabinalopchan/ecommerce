@@ -57,6 +57,7 @@ class MyApp extends StatelessWidget {
               ),
               initialRoute: "/login",
               routes: {
+                // "/splash": (BuildContext context) => SplashScreen(),
                 "/login": (BuildContext context) => LoginScreen(),
                 "/register": (BuildContext context) => RegisterScreen(),
                 "/forgot_password": (BuildContext context) =>
@@ -67,6 +68,8 @@ class MyApp extends StatelessWidget {
                 "/product_screen": (BuildContext context) => MyProductScreen(),
                 "/add-product": (BuildContext context) => AddProductScreen(),
                 "/edit-product": (BuildContext context) => EditProductScreen(),
+                //  "/single-category": (BuildContext context)=>SingleCategoryScreen(),
+
               },
             );
           },

@@ -40,11 +40,10 @@ class CategoryRepository {
 
   List<CategoryModel> makeCategory() {
     return [
-      CategoryModel(categoryName: "Vodka"),
-      CategoryModel(categoryName: "Wine"),
-      CategoryModel(categoryName: "Whisky"),
-      CategoryModel(categoryName: "Rum"),
-      CategoryModel(categoryName: "Beer"),
+      CategoryModel(categoryName: "Earring"),
+      CategoryModel(categoryName: "Necklace"),
+      CategoryModel(categoryName: "Bracelet"),
+      CategoryModel(categoryName: "Ring"),
     ];
   }
 }
