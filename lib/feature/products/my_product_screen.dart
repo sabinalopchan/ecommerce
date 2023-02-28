@@ -22,6 +22,7 @@ class _MyProductScreenState extends State<MyProductScreen> {
   void initState() {
     _ui = Provider.of<GlobalUIViewModel>(context, listen: false);
     _authViewModel = Provider.of<AuthViewModel>(context, listen: false);
+    getInit();
     super.initState();
   }
 

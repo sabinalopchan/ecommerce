@@ -6,5 +6,4 @@ class FirebaseService {
   static FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   static FirebaseFirestore db = FirebaseFirestore.instance;
   static Reference storageRef = FirebaseStorage.instance.ref();
-
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../common/app/theme.dart';
+import 'home_page.dart';
 import 'home_screen.dart';
 
 class HomePageHeader extends StatefulWidget {

@@ -6,7 +6,8 @@ import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-ProductModel? productModelFromJson(String str) => ProductModel.fromJson(json.decode(str));
+ProductModel? productModelFromJson(String str) =>
+    ProductModel.fromJson(json.decode(str));
 
 String productModelToJson(ProductModel? data) => json.encode(data!.toJson());
 
@@ -32,38 +33,37 @@ class ProductModel {
   String? imagePath;
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
-    id: json["id"],
-    userId: json["user_id"],
-    categoryId: json["category_id"],
-    productName: json["productName"],
-    productPrice: json["productPrice"].toDouble(),
-    productDescription: json["productDescription"],
-    imageUrl: json["imageUrl"],
-    imagePath: json["imagePath"],
-  );
+        id: json["id"],
+        userId: json["user_id"],
+        categoryId: json["category_id"],
+        productName: json["productName"],
+        productPrice: json["productPrice"].toDouble(),
+        productDescription: json["productDescription"],
+        imageUrl: json["imageUrl"],
+        imagePath: json["imagePath"],
+      );
 
-
-
-  factory ProductModel.fromFirebaseSnapshot(DocumentSnapshot<Map<String, dynamic>> json) => ProductModel(
-    id: json.id,
-    userId: json["user_id"],
-    categoryId: json["category_id"],
-    productName: json["productName"],
-    productPrice: json["productPrice"].toDouble(),
-    productDescription: json["productDescription"],
-    imageUrl: json["imageUrl"],
-    imagePath: json["imagePath"],
-  );
-
+  factory ProductModel.fromFirebaseSnapshot(
+          DocumentSnapshot<Map<String, dynamic>> json) =>
+      ProductModel(
+        id: json.id,
+        userId: json["user_id"],
+        categoryId: json["category_id"],
+        productName: json["productName"],
+        productPrice: json["productPrice"].toDouble(),
+        productDescription: json["productDescription"],
+        imageUrl: json["imageUrl"],
+        imagePath: json["imagePath"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "user_id": userId,
-    "category_id": categoryId,
-    "productName": productName,
-    "productPrice": productPrice,
-    "productDescription": productDescription,
-    "imageUrl": imageUrl,
-    "imagePath": imagePath,
-  };
+        "id": id,
+        "user_id": userId,
+        "category_id": categoryId,
+        "productName": productName,
+        "productPrice": productPrice,
+        "productDescription": productDescription,
+        "imageUrl": imageUrl,
+        "imagePath": imagePath,
+      };
 }

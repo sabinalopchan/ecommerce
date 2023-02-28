@@ -63,13 +63,12 @@ class MyApp extends StatelessWidget {
                 "/forgot_password": (BuildContext context) =>
                     ForgotPasswordSreen(),
                 "/dashboard": (BuildContext context) => DashboardScreen(),
-                "/single-product": (BuildContext context) =>
-                    SingleProductScreen(),
+                // "/single-product": (BuildContext context) =>
+                //     SingleProductScreen(),
                 "/product_screen": (BuildContext context) => MyProductScreen(),
                 "/add-product": (BuildContext context) => AddProductScreen(),
                 "/edit-product": (BuildContext context) => EditProductScreen(),
                 //  "/single-category": (BuildContext context)=>SingleCategoryScreen(),
-
               },
             );
           },
