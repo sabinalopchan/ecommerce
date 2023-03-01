@@ -1,7 +1,10 @@
+import 'package:control_style/decorated_input_border.dart';
+import 'package:ecommerce/common/textfield/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
+import '../../common/app/theme.dart';
 import '../../models/product_model.dart';
 import '../../services/file_upload.dart';
 import '../../viewmodels/auth_viewmodel.dart';
@@ -40,7 +43,8 @@ class _EditProductBodyState extends State<EditProductBody> {
   late GlobalUIViewModel _ui;
   late AuthViewModel _authViewModel;
   late CategoryViewModel _categoryViewModel;
-  late SingleProductViewModel _singleProductViewModel=SingleProductViewModel();
+  late SingleProductViewModel _singleProductViewModel =
+      SingleProductViewModel();
   String? productId;
 
   @override
@@ -48,9 +52,11 @@ class _EditProductBodyState extends State<EditProductBody> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _ui = Provider.of<GlobalUIViewModel>(context, listen: false);
       _authViewModel = Provider.of<AuthViewModel>(context, listen: false);
-      _categoryViewModel = Provider.of<CategoryViewModel>(context, listen: false);
-      _singleProductViewModel=Provider.of<SingleProductViewModel>(context, listen: false);
-       final args = ModalRoute.of(context)!.settings.arguments.toString();
+      _categoryViewModel =
+          Provider.of<CategoryViewModel>(context, listen: false);
+      _singleProductViewModel =
+          Provider.of<SingleProductViewModel>(context, listen: false);
+      final args = ModalRoute.of(context)!.settings.arguments.toString();
       setState(() {
         productId = args;
       });
@@ -59,6 +65,7 @@ class _EditProductBodyState extends State<EditProductBody> {
     });
     super.initState();
   }
+
   void editProduct() async {
     _ui.loadState(true);
     try {
@@ -160,11 +167,10 @@ class _EditProductBodyState extends State<EditProductBody> {
   Widget build(BuildContext context) {
     return Consumer<SingleProductViewModel>(
         builder: (context, singleProductVM, child) {
-      if (_singleProductViewModel.product == null) 
-          return Text("Error");
+      if (_singleProductViewModel.product == null) return Text("Error");
       return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black54,
+          backgroundColor: CustomTheme.primaryColor,
           title: Text("Edit a product"),
         ),
         body:
@@ -180,54 +186,49 @@ class _EditProductBodyState extends State<EditProductBody> {
                     SizedBox(
                       height: 10,
                     ),
-                    TextFormField(
+                    CustomTextField(
+                      hintText: "Product Name",
                       controller: _productNameController,
-                      // validator: ValidateProduct.username,
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        border: InputBorder.none,
-                        label: Text("Product Name"),
-                        hintText: 'Enter product name',
-                      ),
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    TextFormField(
+                    CustomTextField(
+                      hintText: "Product Name",
                       controller: _productPriceController,
-                      // validator: ValidateProduct.username,
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        border: InputBorder.none,
-                        label: Text("Product Price"),
-                        hintText: 'Enter product price',
-                      ),
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     TextFormField(
                       controller: _productDescriptionController,
-                      // validator: ValidateProduct.username,
                       keyboardType: TextInputType.multiline,
                       maxLines: 5,
                       decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        border: InputBorder.none,
-                        label: Text("Product Description"),
-                        hintText: 'Enter product description',
-                      ),
+                          border: DecoratedInputBorder(
+                            child: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12.0)),
+                              borderSide: BorderSide(
+                                width: 0,
+                                style: BorderStyle.none,
+                              ),
+                            ),
+                            shadow: [
+                              BoxShadow(
+                                color: CustomTheme.backgroudColor,
+                                blurRadius: 8,
+                              )
+                            ],
+                          ),
+                          disabledBorder: InputBorder.none,
+                          filled: true,
+                          fillColor: Colors.white,
+                          hintText: 'Enter product description',
+                          hintStyle: TextStyle(
+                            fontSize: 15,
+                            color: CustomTheme.lightTextColor,
+                          )),
                     ),
                     SizedBox(
                       height: 15,

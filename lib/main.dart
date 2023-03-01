@@ -13,6 +13,7 @@ import 'feature/products/add_product_screen.dart';
 import 'feature/products/edit_product_screen.dart';
 import 'feature/products/my_product_screen.dart';
 import 'feature/products/single_product_screen.dart';
+import 'feature/splash/splash_screen.dart';
 import 'viewmodels/category_viewmodel.dart';
 import 'viewmodels/product_viewmodel.dart';
 
@@ -55,16 +56,16 @@ class MyApp extends StatelessWidget {
                 primarySwatch: Colors.blue,
                 // textTheme: GoogleFonts.openSansTextTheme(),
               ),
-              initialRoute: "/login",
+              initialRoute: "/splash",
               routes: {
-                // "/splash": (BuildContext context) => SplashScreen(),
+                "/splash": (BuildContext context) => SplashScreen(),
                 "/login": (BuildContext context) => LoginScreen(),
                 "/register": (BuildContext context) => RegisterScreen(),
                 "/forgot_password": (BuildContext context) =>
                     ForgotPasswordSreen(),
                 "/dashboard": (BuildContext context) => DashboardScreen(),
-                // "/single-product": (BuildContext context) =>
-                //     SingleProductScreen(),
+                "/single-product": (BuildContext context) =>
+                    SingleProductScreen(),
                 "/product_screen": (BuildContext context) => MyProductScreen(),
                 "/add-product": (BuildContext context) => AddProductScreen(),
                 "/edit-product": (BuildContext context) => EditProductScreen(),

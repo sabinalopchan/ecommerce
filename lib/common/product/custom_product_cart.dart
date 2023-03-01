@@ -64,7 +64,7 @@ class _CustomProductCartState extends State<CustomProductCart> {
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400))
           ]),
           SizedBox(
-            width: 2,
+            width: 5,
           ),
           Row(children: [
             IconButton(

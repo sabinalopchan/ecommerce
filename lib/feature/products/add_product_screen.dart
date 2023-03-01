@@ -123,7 +123,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black54,
+        backgroundColor: CustomTheme.primaryColor,
         title: Text("Add a product"),
       ),
       body: Consumer<CategoryViewModel>(builder: (context, categoryVM, child) {
@@ -265,7 +265,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                         )
                       : Container(),
                   SizedBox(
-                    height: 10,
+                    height: 16,
                   ),
                   Container(
                     width: double.infinity,
@@ -274,8 +274,9 @@ class _AddProductScreenState extends State<AddProductScreen> {
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: BorderSide(color: Colors.blue))),
+                                      borderRadius: BorderRadius.circular(12),
+                                      side: BorderSide(
+                                          color: CustomTheme.primaryColor))),
                           padding: MaterialStateProperty.all<EdgeInsets>(
                               EdgeInsets.symmetric(vertical: 10)),
                         ),
@@ -288,19 +289,20 @@ class _AddProductScreenState extends State<AddProductScreen> {
                         )),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 16,
                   ),
                   Container(
                     width: double.infinity,
                     child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.orange),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.red.shade300),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
-                                      side: BorderSide(color: Colors.orange))),
+                                      side: BorderSide(
+                                          color: Colors.red.shade300))),
                           padding: MaterialStateProperty.all<EdgeInsets>(
                               EdgeInsets.symmetric(vertical: 10)),
                         ),

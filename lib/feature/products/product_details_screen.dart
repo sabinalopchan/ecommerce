@@ -1,5 +1,5 @@
 import 'package:carousel_indicator/carousel_indicator.dart';
-
+import 'package:ecommerce/feature/products/product_cart_list_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
 
   List<Widget> _demo = [
     Container(
-      child: Image.asset("assets/images/j.jpg"),
+      child: Image.asset("assets/images/logo.png"),
     ),
     Container(
       child: Image.asset("assets/images/shoe.jpg"),
@@ -50,7 +50,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             Padding(
               padding: const EdgeInsets.only(right: 8.0),
               child: Icon(
-                Icons.more_horiz,
+                Icons.favorite,
                 color: Colors.black,
                 size: 25,
               ),
@@ -106,30 +106,23 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       Row(
                         children: [
                           Text(
-                            "Ladies Shoe",
+                            "Ring 2",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w500),
                           ),
                           SizedBox(
-                            width: 180,
+                            width: 150,
                           ),
                           Text(
-                            "19,000",
+                            "5000",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w500),
                           ),
                         ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
-                        child: Text(
-                          "Size: 37,38,39",
-                          style: TextStyle(color: CustomTheme.lightTextColor),
-                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
@@ -147,7 +140,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         title: "Add to cart",
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => DashboardScreen()));
+                              builder: (context) => ProductCartScreen()));
                         },
                       ),
                     ],

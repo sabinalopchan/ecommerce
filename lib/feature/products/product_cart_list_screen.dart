@@ -1,10 +1,8 @@
-
 import 'package:flutter/material.dart';
 
 import '../../common/app/theme.dart';
 import '../../common/button/custom_button.dart';
 import '../../common/product/custom_product_cart.dart';
-
 
 class ProductCartScreen extends StatefulWidget {
   ProductCartScreen({
@@ -13,24 +11,9 @@ class ProductCartScreen extends StatefulWidget {
 
   final List<Map<String, dynamic>> _cartList = [
     {
-      "title": "Converse",
+      "title": "Earring 2",
       "subTitle": "5000",
-      "image": "assets/images/shoe.jpg"
-    },
-    {
-      "title": "Converse",
-      "subTitle": "5000",
-      "image": "assets/images/shoe.jpg"
-    },
-    {
-      "title": "Converse",
-      "subTitle": "5000",
-      "image": "assets/images/shoe.jpg"
-    },
-    {
-      "title": "Converse",
-      "subTitle": "5000",
-      "image": "assets/images/shoe.jpg"
+      "image": "assets/images/logo.png"
     },
   ];
 
@@ -122,7 +105,6 @@ class _ProductCartScreenState extends State<ProductCartScreen> {
                           ),
                           CustomButton(
                             title: "Checkout",
-                           
                           ),
                         ],
                       ),
